@@ -1,5 +1,5 @@
-#ifndef ADAPTER_H
-#define ADAPTER_H
+#ifndef LEGACY_ORM_H
+#define LEGACY_ORM_H
 
 #include <string>
 #include <regex>
