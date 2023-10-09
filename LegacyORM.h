@@ -2,6 +2,8 @@
 #define ADAPTER_H
 
 #include <string>
+#include <regex>
+#include <iostream>
 
 class LegacyORM {
 public:
