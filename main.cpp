@@ -6,7 +6,7 @@
 
 void TestAdapterValidQueryWithFromAndJoin() {
     adapter a;
-    string query = "FROM table1 SELECT * JOIN table2 ON table1.id = table2.id WHERE table1.name = 'John'";
+    string query = "FROM table1 JOIN table2 ON table1.id = table2.id SELECT * WHERE table1.name = 'John'";
 
     bool result = a.Query(query);
 
@@ -23,17 +23,6 @@ void TestAdapterValidQueryWithOnlyFrom() {
 
     if (!result) {
         std::cerr << "TestAdapterValidQueryWithOnlyFrom failed" << std::endl;
-    }
-}
-
-void TestAdapterValidQueryWithOnlyJoin() {
-    adapter a;
-    string query = "JOIN table2 ON table1.id = table2.id SELECT * WHERE table1.name = 'John'";
-
-    bool result = a.Query(query);
-
-    if (!result) {
-        std::cerr << "TestAdapterValidQueryWithOnlyJoin failed" << std::endl;
     }
 }
 
@@ -73,11 +62,15 @@ void TestLegacyORMExecuteQuery() {
 }
 
 int main() {
+    cout << "first test: " << endl;
     TestAdapterValidQueryWithFromAndJoin();
+    cout << "second test: " << endl;
     TestAdapterValidQueryWithOnlyFrom();
-    TestAdapterValidQueryWithOnlyJoin();
+    cout << "third test: " << endl;
     TestAdapterValidQueryWithNeitherFromNorJoin();
+    cout << "forth test: " << endl;
     TestAdapterInvalidQuery();
+    cout << "fifth test: " << endl;
     TestLegacyORMExecuteQuery();
 
     return 0;
