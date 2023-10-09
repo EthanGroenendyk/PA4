@@ -8,6 +8,8 @@ bool adapter::Query(string query){
     int joinPos = query.find("JOIN");
     int restPos = query.find("WHERE");
 
+    bool found = false;
+    while()
     if(restPos == string::npos){
         restPos = query.find("HAVING");
     }
