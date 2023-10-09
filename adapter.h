@@ -1,12 +1,14 @@
 #ifndef ADAPTER_H
 #define ADAPTER_H
 
+#include <iostream>
 #include <string>
+using namespace std;
 
 class adapter{
     public:
 
-    bool Query(std::string"")
+    bool Query(string query);
 
     private:
 };
